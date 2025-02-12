@@ -1,0 +1,182 @@
+body {
+    width: 100vw;
+    height: 100vh;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+}
+
+.mainPage {
+    width: 100vw;
+    height: 100vh;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.startBox {
+    position: relative;
+}
+
+.header {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2rem;
+
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+
+    color: #8b0000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.startButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.button {
+    padding: 20px 40px;
+    
+    border: none;
+    border-radius: 30px;
+    clip-path: inset(0 round 30px);
+    
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    transition: all 0.5s ease;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.ja {
+    background-color: #4CAF50;
+}
+
+.nein {
+    background-color: #f44336;
+    position: absolute;
+}
+
+.fake {
+    background: transparent;
+    border: none;
+    color: transparent;
+}
+
+.buttons-container {
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+}
+
+/* Animationen */
+
+.heart-animation {
+    position: absolute;
+    pointer-events: none;
+    animation: heartExplosion 0.8s ease-out;
+}
+
+/* Spawn-Animation */
+@keyframes bloom {
+    0% {
+        transform: scale(0) rotate(-15deg);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.1) rotate(5deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* Klick-Animation */
+@keyframes heartExplosion {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+.overlayPage {
+    width: 100vw;
+    height: 100vh;
+
+    padding: 0;
+    margin: 0;
+
+    display: none;
+
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1000;
+}
+.overlayContent {
+    max-width: 600px;
+
+    padding: 20px;
+
+    font-family: 'Pacifico', cursive;
+
+    animation: fadeIn 1s;
+}
+
+.overlayContent h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.overlayContent p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 2rem;
+    }
+    
+    .button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+    
+    .overlay-content h2 {
+        font-size: 2rem;
+    }
+    
+    .overlay-content p {
+        font-size: 1.2rem;
+    }
+}
