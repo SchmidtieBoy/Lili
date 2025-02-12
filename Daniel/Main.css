@@ -56,7 +56,6 @@ body {
     
     font-family: 'Pacifico', cursive;
     font-size: 1.5rem;
-    transition: all 0.5s ease;
 
     color: white;
 
@@ -65,11 +64,14 @@ body {
 
 .ja {
     background-color: #4CAF50;
+    z-index: 10;
 }
 
 .nein {
     background-color: #f44336;
     position: absolute;
+
+    transition: all 0.5s ease;
 }
 
 .fake {
@@ -89,8 +91,11 @@ body {
 
 .heart-animation {
     position: absolute;
+
+    z-index: 100;
+
     pointer-events: none;
-    animation: heartExplosion 0.8s ease-out;
+    animation: heartExplosion 5s ease-out;
 }
 
 /* Spawn-Animation */
@@ -115,7 +120,7 @@ body {
         opacity: 1;
     }
     100% {
-        transform: scale(3);
+        transform: scale(4);
         opacity: 0;
     }
 }
